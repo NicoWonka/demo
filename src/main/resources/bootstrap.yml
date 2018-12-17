@@ -1,0 +1,10 @@
+server.port: ${PORT:9091}
+
+spring:
+  cloud:
+    config:
+     uri: http://config:bmljb3dvbmth@localhost:8888
+     
+health:
+  config:
+    enabled: true
