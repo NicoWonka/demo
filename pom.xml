@@ -10,10 +10,10 @@
 	</parent>
 	
 	<groupId>cl.apiservice</groupId>
-	<artifactId>demo</artifactId>
-	<version>1.0.1</version>
-	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+	<artifactId>ms-springbt-cfg-psql</artifactId>
+	<version>1.0.0</version>
+	<name>ms-springbt-cfg-psql</name>
+	<description>Demostracion de Spring Boot con Config Server, Git y Postgres</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -67,7 +67,6 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<!-- <scope>runtime</scope> -->
 		</dependency>
 	</dependencies>
 
@@ -82,7 +81,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
+	
 	<build>
 	    <pluginManagement>
 			<plugins>
@@ -98,4 +97,12 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+		</repository>
+	</repositories>
 </project>
