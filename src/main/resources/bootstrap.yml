@@ -1,10 +1,40 @@
-server.port: ${PORT:9091}
+info:
+  component: ms-springbt-cfg-psql
 
 spring:
-  cloud:
-    config:
-     uri: http://config:bmljb3dvbmth@localhost:8888
-     
-health:
-  config:
+  application:
+    name: ms-springbt-cfg-psql
+    
+  cloud.config:
+    uri:  ${CONFIG_SERVER:http://config:bmljb3dvbmth@localhost:8888}
+    label:  master
+    profile: default
+    discovery:
+      enabled:  false
+      service-id: config-server
+    failFast: true
+    retry:
+      initial-interval: 5000
+
+server.port: ${PORT:9091}
+server.context-path: /demo/v1
+
+management:
+  security:
+    sessions: stateless
+    enabled: false
+  context-path: /admin
+  port: ${PORT_ADMIN:9090}
+  
+endpoints:
+  restart:
     enabled: true
+  shutdown:
+    enabled: true
+    
+logging:  
+#  file: logs/${spring.application.name}.log
+  level:
+    org.springframework.boot: 'INFO'
+    org.springframework.cloud: 'DEBUG'
+    com.atsistemas: 'DEBUG'
