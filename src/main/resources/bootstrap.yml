@@ -11,7 +11,7 @@ spring:
     profile: default
     discovery:
       enabled:  false
-      service-id: config-server
+      service-id: configserver
     failFast: true
     retry:
       initial-interval: 5000
